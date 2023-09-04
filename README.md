@@ -1,6 +1,6 @@
 # Better PLM Class Schedule ![GitHub release (latest by date)](https://img.shields.io/github/v/release/drianlarde/plm-crs-better-scheduler)
 
-Better PLM Class Schedule is a web extension that enhances the class scheduling experience for students using the PLM CRS. It allows students to convert their class schedule into a format that can be easily imported into Google Calendar. Additionally, it provides a feature to bulk delete events in Google Calendar.
+Better PLM Class Schedule is a web extension that enhances the class scheduling experience for students. It allows students to convert their class schedule into a format that can be easily imported into Google Calendar. Additionally, it provides a feature to bulk delete events in Google Calendar.
 
 ## Installation
 
