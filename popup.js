@@ -1,24 +1,57 @@
 document.getElementById("convertButton").addEventListener("click", function () {
-  let startDate = document.getElementById("startDate").value;
-  let endDate = document.getElementById("endDate").value;
+  // If current link isn't `https://web1.plm.edu.ph/crs/studentaccess/enlistment_view.php` then alert the user
+  chrome.tabs.query({ active: true }, (tabs) => {
+    const tab = tabs[0];
+    console.log("URL:", tab.url);
 
-  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    chrome.scripting.executeScript({
-      target: { tabId: tabs[0].id },
-      args: [startDate, endDate],
-      function: generateCSVFile,
-    });
+    if (
+      tab.url !==
+      "https://web1.plm.edu.ph/crs/studentaccess/enlistment_view.php"
+    ) {
+      alert(
+        "Please go to https://web1.plm.edu.ph/crs/studentaccess/enlistment_view.php"
+      );
+      chrome.tabs.update({
+        url: "https://web1.plm.edu.ph/crs/studentaccess/enlistment_view.php",
+      });
+    } else {
+      let startDate = document.getElementById("startDate").value;
+      let endDate = document.getElementById("endDate").value;
+
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.scripting.executeScript({
+          target: { tabId: tabs[0].id },
+          args: [startDate, endDate],
+          function: generateCSVFile,
+        });
+      });
+    }
   });
 });
 
 document
   .getElementById("deleteAllEventsButton")
   .addEventListener("click", function () {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      chrome.scripting.executeScript({
-        target: { tabId: tabs[0].id },
-        function: deleteAllEventsInAgenda,
-      });
+    // If link doesn't contain `https://calendar.google.com/calendar/` then alert the user
+    chrome.tabs.query({ active: true }, (tabs) => {
+      const tab = tabs[0];
+
+      if (tab.url.includes("https://calendar.google.com/calendar/") === false) {
+        alert("Please go to https://calendar.google.com/calendar/");
+        chrome.tabs.update({
+          url: "https://calendar.google.com/calendar/u/0/r/agenda",
+        });
+      } else {
+        chrome.tabs.query(
+          { active: true, currentWindow: true },
+          function (tabs) {
+            chrome.scripting.executeScript({
+              target: { tabId: tabs[0].id },
+              function: deleteAllEventsInAgenda,
+            });
+          }
+        );
+      }
     });
   });
 
