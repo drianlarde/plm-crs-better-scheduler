@@ -4,28 +4,20 @@ document.getElementById("convertButton").addEventListener("click", function () {
     const tab = tabs[0];
     console.log("URL:", tab.url);
 
-    if (
-      tab.url !==
-      "https://web1.plm.edu.ph/crs/studentaccess/enlistment_view.php"
-    ) {
-      alert(
-        "Please go to https://web1.plm.edu.ph/crs/studentaccess/enlistment_view.php"
-      );
-      chrome.tabs.update({
-        url: "https://web1.plm.edu.ph/crs/studentaccess/enlistment_view.php",
-      });
-    } else {
-      let startDate = document.getElementById("startDate").value;
-      let endDate = document.getElementById("endDate").value;
+    chrome.tabs.update({
+      url: "https://web1.plm.edu.ph/crs/studentaccess/enlistment_view.php",
+    });
 
-      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        chrome.scripting.executeScript({
-          target: { tabId: tabs[0].id },
-          args: [startDate, endDate],
-          function: generateCSVFile,
-        });
+    let startDate = document.getElementById("startDate").value;
+    let endDate = document.getElementById("endDate").value;
+
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      chrome.scripting.executeScript({
+        target: { tabId: tabs[0].id },
+        args: [startDate, endDate],
+        function: generateCSVFile,
       });
-    }
+    });
   });
 });
 
