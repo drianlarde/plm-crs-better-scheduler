@@ -1,21 +1,22 @@
 {
   "manifest_version": 3,
-  "name": "PLM Class Schedule to Google Calendar",
+  "name": "Better PLM CRS Class Schedule",
   "version": "1.0",
   "description": "Helps haribons to put their class schedule from PLM CRS to Google Calendar. They can also bulk delete events in Google Calendar. - Adrian Abelarde (@drianlarde)",
   "permissions": ["activeTab", "scripting"],
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "app/popup.html",
     "default_icon": {
-      "16": "images/icon16.png",
-      "48": "images/icon48.png",
-      "128": "images/icon128.png"
+      "16": "assets/icon16.png",
+      "32": "assets/icon32.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
     }
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": ["app/content.js"]
     }
   ]
 }
