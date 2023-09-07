@@ -1,0 +1,24 @@
+input {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--input);
+    background: var(--input);
+    color: var(--foreground);
+    border-radius: 0.4rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input:hover {
+    border-color: var(--primary);
+}
+
+input:focus {
+    border-color: var(--primary);
+    background: var(--background);
+    outline: none;
+}
+
+input:disabled {
+    background: var(--muted);
+    color: var(--muted-foreground);
+    cursor: not-allowed;
+}

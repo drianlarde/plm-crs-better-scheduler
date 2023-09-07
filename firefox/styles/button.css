@@ -1,0 +1,62 @@
+button {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    transition: background-color 0.3s ease;
+}
+
+button.primary {
+    background: black;
+    color: white;
+}
+
+button.primary:hover {
+    background: #333;
+}
+
+button.secondary {
+    background: white;
+    border: 1px solid black;
+    color: black;
+}
+
+button.secondary:hover {
+    background: #f2f2f2;
+}
+
+button.outline {
+    border: 1px solid black;
+    color: black;
+}
+
+button.outline:hover {
+    border: 1px solid #333;
+    color: #333;
+}
+
+button.ghost {
+    background: transparent;
+    color: black;
+}
+
+button.ghost:hover {
+    color: #333;
+}
+
+button:disabled {
+    background: grey;
+    color: white;
+    cursor: not-allowed;
+}
+
+button.destructive {
+    border: 1px solid hsl(0, 100%, 50%);
+    color: hsl(0, 100%, 50%);
+}
+
+button.destructive:hover {
+    background: hsl(0, 100%, 50%);
+    color: hsl(210, 40%, 98%);
+}

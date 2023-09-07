@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Import Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Import Local Libraries -->
+    <link rel="stylesheet" href="../node_modules/vanillajs-datepicker/dist/css/datepicker.min.css">
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="../styles/globals.css">
+    <link rel="stylesheet" href="../styles/button.css">
+    <link rel="stylesheet" href="../styles/input.css">
+</head>
+
+<body style="width: fit-content">
+    <!-- Heading -->
+    <section style="width: 100%; display: flex; justify-content: center;">
+        <h1 style="text-align: center; max-width: 200px;">Better PLM Class Schedule</h1>
+    </section>
+    <div style="width: 100%; display: flex; justify-content: center;">
+        <p style="max-width: 200px; text-align: center; font-size: small; color: #6e6e6e;">Converts PLM Class Schedule
+            to Google
+            Calendar Events
+        </p>
+    </div>
+
+    <!-- Datepicker -->
+    <section style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1rem;">
+        <div style="display: flex; flex-direction: column;">
+            <h5 for="startDate">Start Date</h5>
+            <input type="text" id="startDate" placeholder="mm/dd/yyyy" value="09/01/2023">
+        </div>
+        <div style="display: flex; flex-direction: column;">
+            <h5 for="endDate">End Date</h5>
+            <input type="text" id="endDate" placeholder="mm/dd/yyyy" value="09/30/2023">
+        </div>
+    </section>
+
+    <button id="convertButton" class="button primary" style="width: 100%;">Convert</button>
+
+    <!-- Donate -->
+    <section style="width: 100%; text-align: center; margin-top: 2rem; font-size: small;">
+        <h4>Donate</h4>
+        <div style="width: 100%; display: flex; justify-content: center;">
+            <p style="max-width: 350px; text-align: center; color: #6e6e6e">
+                If you find this extension useful, feel free to donate; helps me maintain this project. Thank you so
+                much!
+            </p>
+        </div>
+        <button class="button secondary" style="margin-bottom: 0.4rem; padding-inline: 0.4rem;"><a
+                href="https://www.buymeacoffee.com/drianlarde" target="_blank" rel="noopener noreferrer"
+                style="text-decoration: none; color: #1e1e1e;">Buy me a
+                coffee
+            </a></button>
+
+        <div class="button-container">
+            <button class="button secondary">GCash (09672296409)</button>
+            <div class="qr-code" style="filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.25));">
+                <img src="../assets/gcash-qr-code-adrian.png" alt="QR Code"
+                    style="width: 14rem; height: auto; object-fit: contain; border-radius: 1rem;" />
+            </div>
+        </div>
+
+        <br>
+        <a style="margin-bottom: 4rem;" href="https://www.linkedin.com/in/drianlarde/" nofollow target="_blank"
+            rel="noopener noreferrer">
+            by Adrian
+            Abelarde
+            (@drianlarde)</a>
+    </section>
+
+    <!-- Scripts -->
+    <script src="../node_modules/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>
