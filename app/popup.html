@@ -4,25 +4,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Import Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 
-  <title>PLM Better Scheduler</title>
+  <!-- Import CSS -->
   <link rel="stylesheet" href="/styles/globals.css">
   <link rel="stylesheet" href="/styles/button.css">
   <link rel="stylesheet" href="/styles/input.css">
+
+  <!-- Import JS -->
+  <script type="application/javascript" src="popup.js" defer></script>
+  <script type="application/javascript" src="content.js" defer></script>
+  <script type="application/javascript" src="../lib/utils.js" defer></script>
+
+  <title>PLM Better Scheduler</title>
 </head>
 
-<body style="width: 100vh;">
-  <h1 style="text-align: center;">Better PLM Class Schedule</h1>
+<body style="width: 400px">
+  <!-- Heading -->
+  <section style="width: 100%; display: flex; justify-content: center;">
+    <h1 style="text-align: center;">Better PLM Class Schedule</h1>
+  </section>
   <div style="width: 100%; display: flex; justify-content: center;">
-    <p style="max-width: 200px; text-align: center;">Converts PLM Class Schedule to Google Calendar Events
+    <p style="max-width: 200px; text-align: center; font-size: small; color: #6e6e6e;">Converts PLM Class Schedule
+      to Google
+      Calendar Events
     </p>
   </div>
 
+  <!-- Datepicker -->
   <div style="margin-bottom: 2rem;">
     <label for="startDate">Start Date</label>
     <br>
@@ -32,6 +47,7 @@
     <input type="date" id="endDate" style="width: 100%;" required />
   </div>
 
+  <!-- Action Buttons -->
   <div style="display: flex; gap: 0.4rem; margin-bottom: 0.4rem;">
     <button id="convertButton" class="button primary" style="width: 100%;">Convert</button>
     <button class="button outline" style="width: 100%;"><a
@@ -43,12 +59,13 @@
   <button id="deleteAllEventsButton" class="button destructive" style="width: 100%; margin-bottom: 0.4rem;">Delete All
     Events</button>
 
-
-  <section style="width: 100%; text-align: center; margin-top: 2rem;">
-    <h1>Donate</h1>
+  <!-- Donate -->
+  <section style="width: 100%; text-align: center; margin-top: 2rem; font-size: small;">
+    <h4>Donate</h4>
     <div style="width: 100%; display: flex; justify-content: center;">
-      <p style="max-width: 350px; text-align: center;">
-        If you find this extension useful, please consider donating to help me maintain this project. Thank you!
+      <p style="max-width: 350px; text-align: center; color: #6e6e6e">
+        If you find this extension useful, feel free to donate; helps me maintain this project. Thank you so
+        much!
       </p>
     </div>
     <button class="button secondary" style="margin-bottom: 0.4rem; padding-inline: 0.4rem;"><a
@@ -59,8 +76,8 @@
 
     <div class="button-container">
       <button class="button secondary">GCash (09672296409)</button>
-      <div class="qr-code">
-        <img src="images/gcash-qr-code-adrian.jpg" alt="QR Code"
+      <div class="qr-code" style="filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.25));">
+        <img src="/assets/gcash-qr-code-adrian.png" alt="QR Code"
           style="width: 14rem; height: auto; object-fit: contain; border-radius: 1rem;" />
       </div>
     </div>
@@ -72,7 +89,6 @@
       Abelarde
       (@drianlarde)</a>
   </section>
-  <script type="module" src="popup.js"></script>
 </body>
 
 </html>
