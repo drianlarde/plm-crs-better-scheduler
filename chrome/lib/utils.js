@@ -117,11 +117,24 @@ function generateCSVFile(selectedStartDate, selectedEndDate) {
       let startDate = new Date().toISOString().slice(0, 10);
       let endDate = new Date().toISOString().slice(0, 10);
 
+      // Add the setup like `LecSyncOnline` in `M 7:00a-8:30a LecSyncOnline GCA 306,Th 7:00a-8:30a F2F GCA 306`
+      let setup = details[2];
+
+      // If setup includes F2F then add an emoji `🏫` to the description
+      // If setup includes LecSyncOnline then add an emoji `🖥` to the description
+      let setupEmoji = "";
+
+      if (setup.includes("F2F")) {
+        setupEmoji = "🏫";
+      } else {
+        setupEmoji = "🖥";
+      }
+
       let location = details.slice(3).join(" "); // join the remaining details as the location
 
       result.forEach((r) => {
         if (r.day === day) {
-          csvContent += `${description},${r.date},${startAMPM},${r.date},${endAMPM},FALSE,${description},${location},TRUE\r\n`;
+          csvContent += `${setupEmoji} | ${description} ${setup},${r.date},${startAMPM},${r.date},${endAMPM},FALSE,${description},${location},TRUE\r\n`;
         }
       });
     });
@@ -136,13 +149,22 @@ function generateCSVFile(selectedStartDate, selectedEndDate) {
 
 function deleteAllEventsInAgenda() {
   const elements = document.querySelectorAll('[jsname="Fa5oWb"]');
-  if (elements.length === 0) {
+
+  var classEventsElements = [];
+
+  elements.forEach((element) => {
+    if (element.innerText.includes("🏫") || element.innerText.includes("🖥")) {
+      classEventsElements.push(element);
+    }
+  });
+
+  if (classEventsElements.length === 0) {
+    alert("All events have been deleted.");
     return; // Exit the function if there are no more elements to delete
   }
 
-  const element = elements[0]; // Get the first element
+  const element = classEventsElements[0];
 
-  // Click the element
   element.click();
 
   // Wait for the modal to appear
@@ -152,11 +174,9 @@ function deleteAllEventsInAgenda() {
     if (deleteElement) {
       deleteElement.click();
     }
-
     // Simulate the escape key press to close the modal
     const escapeEvent = new KeyboardEvent("keydown", { key: "Escape" });
     document.dispatchEvent(escapeEvent);
-
     // Call deleteElements function recursively after a delay
     setTimeout(deleteAllEventsInAgenda, 10);
   }, 10); // Wait for 1 second before deleting the next element
