@@ -2,29 +2,39 @@
 
 Better PLM Class Schedule is a web extension that enhances the class scheduling experience for students. It allows students to convert their class schedule into a format that can be easily imported into Google Calendar. Additionally, it provides a feature to bulk delete events in Google Calendar.
 
-## Installation
+## Chrome Installation
+1. Go to https://github.com/drianlarde/plm-crs-better-scheduler
+2. Open `Code` button and click `Download ZIP`
+3. Extract the downloaded `.zip` file (I recommend to put it in Desktop)
+4. Enter `chrome://extensions/` in Chrome's URL
+5. Turn on the `Developer Mode` switch
+6. Click `Load Unpacked` button
+7. Open the extracted folder then inside it there's a `plm-crs-better-scheduler/chrome` folder. Select the `chrome` folder.
+8. Enjoy!
 
-1. Navigate to the [Better PLM Class Schedule GitHub repository](https://github.com/drianlarde/plm-crs-better-scheduler).
-<img width="1434" alt="image" src="https://github.com/drianlarde/plm-crs-better-scheduler/assets/69323240/a0b37e80-46ab-4263-8a69-957c6ee37168">
+## Firefox Installation
+- Our Firefox extension is currently being reviewed by Mozzila. After approval, it will be publicly available in Mozilla add-ons.
+- Available in Firefox Developer
 
+## Firefox Installation Workaround
+1. Go to https://github.com/drianlarde/plm-crs-better-scheduler
+2. Open `Code` button and click `Download ZIP`
+3. Extract the downloaded `.zip` file (I recommend to put it in Desktop)
+4. Enter `about:debugging#/runtime/this-firefox` in Firefox URL
+5. Click `Load Temporary Add-on`
+6. Select the `manifest.json` at `plm-crs-better-scheduler/firefox/manifest.json`
+7. Enjoy! (Note: This is temporary)
 
-2. Click the `Code` button and download the repository as a .zip file.
-<img width="432" alt="image" src="https://github.com/drianlarde/plm-crs-better-scheduler/assets/69323240/e1ece34b-308a-40d5-9b4c-09ca9bd5ece4">
-
-3. Extract the .zip file on your local machine.
-<img width="423" alt="image" src="https://github.com/drianlarde/plm-crs-better-scheduler/assets/69323240/4087eeea-160a-4785-ad2b-9b92662f4d5f">
-
-4. Open your browser and navigate to the extensions page (for Chrome, it's `chrome://extensions/`).
-<img width="856" alt="image" src="https://github.com/drianlarde/plm-crs-better-scheduler/assets/69323240/4052131d-19c8-4e63-9e3f-f3943467d030">
-
-5. Enable `Developer mode`.
-<img width="242" alt="image" src="https://github.com/drianlarde/plm-crs-better-scheduler/assets/69323240/70f89dbe-9ed9-4e1e-a406-3e0228e475c9">
-
-6. Click `Load unpacked` and select the extracted folder.
-<img width="441" alt="image" src="https://github.com/drianlarde/plm-crs-better-scheduler/assets/69323240/a1a1274d-cc8d-4794-a117-7e08c5457e87">
-
-7. The extension should now be installed. Make sure to pin it for easy access.
-<img width="316" alt="image" src="https://github.com/drianlarde/plm-crs-better-scheduler/assets/69323240/94b5ef93-07ae-49ab-928f-ebe1bb2dc7c6">
+## Firefox Developer Installation
+1. Go to https://github.com/drianlarde/plm-crs-better-scheduler
+2. Open `Code` button and click `Download ZIP`
+3. Extract the downloaded `.zip` file (I recommend to put it in Desktop)
+4. Enter `about:config` in Firefox Developer URL
+5. Search for `xpinstall.signatures.required` and update it to `false`
+6. Enter `about:addons` then click the gear/settings button.
+7. Then click `Install Add-on From File`
+8. Select the `.zip` file inside `firefox/web-ext-artifacts/better_plm_crs_class_schedule-1.0.zip`
+9. Enjoy!
 
 ## Usage
 
@@ -63,7 +73,7 @@ Better PLM Class Schedule is a web extension that enhances the class scheduling 
 3. If you're sure, click `Delete All Events`. This will automate the deletion process.
 <img width="912" alt="image" src="https://github.com/drianlarde/plm-crs-better-scheduler/assets/69323240/7e7870db-783c-4d06-8814-87904e080616">
 
-Please note: The delete feature will remove all events visible in the agenda view. Please ensure you want to delete all these events before proceeding.
+Please note: The delete feature will remove all events visible in the agenda view. Please ensure you want to delete all events that came from the `.csv` file before proceeding.
 
 ## Contributing
 
