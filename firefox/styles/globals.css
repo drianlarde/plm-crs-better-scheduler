@@ -1,0 +1,52 @@
+:root {
+  --input: #f4f4f4;
+  --color-text: #1e1e1e;
+  --color-text-muted: #6e6e6e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+  font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+  padding: 2rem;
+}
+
+h2 {
+  margin-bottom: 0.6rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.my-link {
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: small;
+  margin-bottom: 2rem;
+}
+
+.button-container {
+  position: relative;
+  display: inline-block;
+}
+
+.qr-code {
+  display: none;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.button-container:hover .qr-code {
+  display: block;
+}
