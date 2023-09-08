@@ -36,6 +36,8 @@ Better PLM Class Schedule is a web extension that enhances the class scheduling 
 8. Select the `.zip` file inside `firefox/web-ext-artifacts/better_plm_crs_class_schedule-1.0.zip`
 9. Enjoy!
 
+> If popup isn't showing, just re-install it or go back at step 6 again.
+
 ## Usage
 
 ### Converting Class Schedule to Google Calendar
