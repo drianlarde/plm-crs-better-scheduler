@@ -38,6 +38,12 @@ Better PLM Class Schedule is a web extension that enhances the class scheduling 
 
 > If popup isn't showing, just re-install it or go back at step 6 again.
 
+## Edge Installation
+1. Almost same with previous instructions but go to `edge://extensions/`
+2. Turn on `Developer Mode` and `Load Unpacked` - select `chrome` folder
+
+> Don't worry if you use `chrome` for Edge since they're both chromium web based browser. It should work fine.
+
 ## Usage
 
 ### Converting Class Schedule to Google Calendar
