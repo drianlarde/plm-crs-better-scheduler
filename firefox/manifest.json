@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Better PLM CRS Class Schedule",
-    "version": "1.0",
+    "version": "1.0.1",
     "description": "Helps haribons to put their class schedule from PLM CRS to Google Calendar. They can also bulk delete events in Google Calendar. - Adrian Abelarde (@drianlarde)",
     "icons": {
     },
@@ -16,9 +16,8 @@
     },
     "browser_specific_settings": {
       "gecko": {
-        "id": "abelardeadrianangelo@gmail.com"
+        "id": "{1922a163-9ab9-4f4b-a6ad-6b38a0252c03}"
       }
     }
-    
 }
   
