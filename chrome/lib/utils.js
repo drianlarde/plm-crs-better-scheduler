@@ -1,4 +1,28 @@
 function generateCSVFile(selectedStartDate, selectedEndDate) {
+  let specialCases = [
+    "MT",
+    "MW",
+    "MTh",
+    "MF",
+    "MS",
+    "MSu",
+    "TW",
+    "TTh",
+    "TF",
+    "TS",
+    "TSu",
+    "WTh",
+    "WF",
+    "WS",
+    "WSu",
+    "ThF",
+    "ThS",
+    "ThSu",
+    "FS",
+    "FSu",
+    "SSu",
+  ];
+
   if (!selectedStartDate || !selectedEndDate) {
     alert("Please select a start and end date.");
     return;
@@ -19,7 +43,34 @@ function generateCSVFile(selectedStartDate, selectedEndDate) {
     let classTitle = row.querySelector("td:nth-child(1)").innerText;
     let section = row.querySelector("td:nth-child(2)").innerText;
     let schedule = row.querySelector("td:nth-child(3)").innerText;
+
+    // Special cases
+    // Iterate over special cases using forEach
+    specialCases.forEach((dayCombo) => {
+      // Define the pattern
+      let pattern = new RegExp("^" + dayCombo + "\\s+(.+)");
+
+      // Pull out the match
+      let match = schedule.match(pattern);
+
+      // Check if it exists in the schedule
+      if (match) {
+        // Split dayCombo into individual days and append rest of the schedule
+        let day1 = dayCombo.charAt(0);
+        let day2 = dayCombo.slice(1);
+
+        // Reformat the schedule
+        schedule = `${day1} ${match[1]},${day2} ${match[1]}`;
+
+        // We can use `return` here instead of `break` to stop the loop after we've made the replacement
+        return;
+      }
+    });
+
     let credits = row.querySelector("td:nth-child(4)").innerText;
+
+    console.log("Subjects:", { classTitle, section, schedule, credits });
+
     return { classTitle, section, schedule, credits };
   });
 
