@@ -147,7 +147,7 @@ function generateCSVFile(selectedStartDate, selectedEndDate) {
   hiddenElement.click();
 }
 
-function deleteAllEventsInAgenda() {
+function deleteAllEventsWithEmojiOnly() {
   const elements = document.querySelectorAll('[jsname="Fa5oWb"]');
 
   var classEventsElements = [];
@@ -178,6 +178,34 @@ function deleteAllEventsInAgenda() {
     const escapeEvent = new KeyboardEvent("keydown", { key: "Escape" });
     document.dispatchEvent(escapeEvent);
     // Call deleteElements function recursively after a delay
-    setTimeout(deleteAllEventsInAgenda, 10);
+    setTimeout(deleteAllEventsWithEmojiOnly, 10);
+  }, 10); // Wait for 1 second before deleting the next element
+}
+
+function deleteAllEvents() {
+  // This deletes all events on the calendar so no need to check for emojis
+  const elements = document.querySelectorAll('[jsname="Fa5oWb"]');
+
+  if (elements.length === 0) {
+    alert("All events have been deleted.");
+    return; // Exit the function if there are no more elements to delete
+  }
+
+  const element = elements[0];
+
+  element.click();
+
+  // Wait for the modal to appear
+  setTimeout(() => {
+    // Click the element with aria-label="Delete event"
+    const deleteElement = document.querySelector('[aria-label="Delete event"]');
+    if (deleteElement) {
+      deleteElement.click();
+    }
+    // Simulate the escape key press to close the modal
+    const escapeEvent = new KeyboardEvent("keydown", { key: "Escape" });
+    document.dispatchEvent(escapeEvent);
+    // Call deleteElements function recursively after a delay
+    setTimeout(deleteAllEvents, 10);
   }, 10); // Wait for 1 second before deleting the next element
 }
