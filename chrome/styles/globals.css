@@ -30,7 +30,6 @@ p {
 
 label {
   font-size: small;
-  margin-bottom: 2rem;
 }
 
 .button-container {
@@ -48,4 +47,17 @@ label {
 
 .button-container:hover .qr-code {
   display: block;
+}
+
+.padding-1 {
+  padding: 0.4rem 0.8rem;
+}
+
+.border-radius-1 {
+  border-radius: 0.4rem;
+}
+
+.outline {
+  border: 1px solid black;
+  color: black;
 }

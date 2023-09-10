@@ -38,7 +38,7 @@
   </div>
 
   <!-- Datepicker -->
-  <div style="margin-bottom: 2rem;">
+  <div style="margin-bottom: 0.4rem;">
     <label for="startDate">Start Date</label>
     <br>
     <input type="date" id="startDate" style="margin-bottom: 0.6rem; width: 100%;" required />
@@ -47,26 +47,47 @@
     <input type="date" id="endDate" style="width: 100%;" required />
   </div>
 
-  <!-- Action Buttons -->
-  <div style="display: flex; gap: 0.4rem; margin-bottom: 0.4rem;">
-    <button id="convertButton" class="button primary" style="width: 100%;">Convert</button>
-    <button class="button outline" style="width: 100%;"><a
-        href="https://calendar.google.com/calendar/u/0/r/settings/export" style="width: 100%; text-decoration: none;"
-        target="_blank" rel="noopener noreferrer">Import to Google
-        Calendar</a>
-    </button>
-  </div>
-
   <hr style="margin: 1rem 0;">
 
-  <section style="width: 100%; text-align: center; font-size: small;">
-    <h4 style="margin-bottom: 0.4rem;">Delete Events</h4>
-    <button id="deleteAllEventsWithEmojiButton" class="button destructive"
-      style="width: 100%; margin-bottom: 0.4rem;">Delete All
-      Events with Emoji</button>
-    <button id="deleteAllEvents" class="button destructive" style="width: 100%; height: 100%;">Delete All
-      Events</button>
+  <!-- Action Buttons -->
+  <section
+    style="width: 100%; text-align: center; font-size: small; display: flex; flex-direction: column; gap: 0.4rem;">
+    <div>
+      <h4 style="margin-bottom: 0.4rem;">Google Calendar</h4>
+      <div style="display: flex; gap: 0.4rem; margin-bottom: 0.4rem;">
+        <button id="convertCSVButton" class="button primary" style="width: 100%;">Convert (.csv)</button>
+        <button class="button outline" style="width: 100%;"><a
+            href="https://calendar.google.com/calendar/u/0/r/settings/export"
+            style="width: 100%; text-decoration: none;" target="_blank" rel="noopener noreferrer">Open GCalendar</a>
+        </button>
+      </div>
+    </div>
+
+    <section style="width: 100%; text-align: center; font-size: small;">
+      <h4 style="margin-bottom: 0.4rem;">Delete Events</h4>
+      <button id="deleteAllEventsWithEmojiButton" class="button destructive"
+        style="width: 100%; margin-bottom: 0.4rem;">Delete All
+        Events with Emoji</button>
+      <button id="deleteAllEvents" class="button destructive" style="width: 100%; height: 100%;">Delete All
+        Events</button>
+    </section>
+
+    <hr style="margin: 1rem 0;">
+
+    <div>
+      <h4>Apple Calendar</h4>
+      <p style="margin-bottom: 0.4rem; color: #6e6e6e;">Import ICS file in Apple Calendar</p>
+
+      <div style="display: flex; gap: 0.4rem;">
+        <label for="fileUploadCSV" class="outline padding-1 border-radius-1" style="width: 100%; cursor: pointer;">
+          Convert (.csv) to (.ics)
+        </label>
+        <input id="fileUploadCSV" type="file" placeholder="Convert .csv to .ics">
+      </div>
+    </div>
   </section>
+
+  <hr style="margin: 1rem 0;">
 
   <!-- Donate -->
   <section style="width: 100%; text-align: center; margin-top: 1rem; font-size: small;">

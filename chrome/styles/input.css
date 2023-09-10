@@ -22,3 +22,7 @@ input:disabled {
     color: var(--muted-foreground);
     cursor: not-allowed;
 }
+
+input[type="file"] {
+    display: none;
+}
